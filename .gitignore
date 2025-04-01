@@ -1,0 +1,36 @@
+# SSH key, credentials
+*.pem
+*.key
+*.crt
+*.vault
+*.j2.vault
+.vault_pass.txt
+
+# Ansible facts cache
+.fact_cache/
+ansible_facts_cache/
+__pycache__/
+
+# Python virtual environment
+.venv/
+env/
+venv/
+
+# ログ・テンポラリファイル
+*.retry
+*.log
+*.tmp
+
+# macOS 用
+.DS_Store
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# その他：インベントリの一時ファイルやバックアップ
+inventory/*_bak
+inventory/*.retry

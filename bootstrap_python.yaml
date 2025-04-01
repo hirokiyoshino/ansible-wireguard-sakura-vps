@@ -1,0 +1,10 @@
+---
+- name: Bootstrap Python 3 on target hosts
+  hosts: wireguard_servers
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Install Python 3 using raw apt command
+      ansible.builtin.raw: sudo apt update && sudo apt install python3 -y
+      register: raw_output
+      changed_when: "'Setting up python3' in raw_output.stdout or 'is already the newest version' not in raw_output.stdout"

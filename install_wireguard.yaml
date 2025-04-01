@@ -1,0 +1,13 @@
+---
+- name: Install WireGuard on Debian servers
+  hosts: wireguard_servers
+  become: yes
+  tasks:
+    - name: Update apt package cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install wireguard package
+      ansible.builtin.apt:
+        name: wireguard
+        state: present
